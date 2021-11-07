@@ -1,3 +1,4 @@
+require "pry"
 class Dog
 
     attr_accessor :name, :breed, :id
@@ -79,4 +80,13 @@ class Dog
         end.first
     end
 
+    def self.find_or_create_by(name, breed)
+    end
+
+    def update
+        sql = "UPDATE songs SET name = ?, breed = ? WHERE name = ?"
+        DB[:conn].execute(sql,self.name,self.breed,self.name)
+    end
+
+    binding.pry
 end
